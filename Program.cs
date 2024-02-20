@@ -124,7 +124,19 @@ namespace Project01_Introduction
             // Input 3 numbers from the user (x,y,z) and find the greatest of them.
 
             // Write your code here
+            Console.WriteLine("Enter three numbers:");
+            int x = Convert.ToInt32(Console.ReadLine());
+            int y = Convert.ToInt32(Console.ReadLine());
+            int z = Convert.ToInt32(Console.ReadLine());
 
+            int greatest = x;
+
+            if (y > greatest)
+                greatest = y;
+            if (z > greatest)
+                greatest = z;
+
+            Console.WriteLine($"The greatest number is: {greatest}");
 
 
 
