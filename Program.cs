@@ -55,19 +55,32 @@ namespace Project01_Introduction
             // Eg. a=3, b=4, c=5. Area = 6
 
             //Write your code here
+            Boolean anumber = false;
+            while (anumber == false) {
+                Console.WriteLine("Exercise 1 : Calculate the area of a triangle using Heron's formula \n");
+                double a, b, c;
+                Console.WriteLine("Enter the lengths of the sides of the triangle:");
+                Console.Write("a = ");
+                a = double.Parse(Console.ReadLine());
+                //Console.Write("b = ");
+                b = 4;
+                    //double.Parse(4);
+               // Console.Write("c = ");
+                c = 5;
+                    //double.Parse(Console.ReadLine());
+                if (a >= 0)
+                {
+                    double area = AreaOfTriangle(a, b, c);
+                    Console.WriteLine($"The area of the triangle is: {area}");
+                }
+                else {
+                    anumber = true;
+                }
+               
+               
 
-            double a, b, c;
-            Console.WriteLine("Enter the lengths of the sides of the triangle:");
-            Console.Write("a = ");
-            a = double.Parse(Console.ReadLine());
-            Console.Write("b = ");
-            b = double.Parse(Console.ReadLine());
-            Console.Write("c = ");
-            c = double.Parse(Console.ReadLine());
-
-            double s = (a + b + c) / 2;
-            double area = Math.Sqrt(s * (s - a) * (s - b) * (s - c));
-            Console.WriteLine($"The area of the triangle is: {area}");
+            }
+           
 
          
 
@@ -84,11 +97,11 @@ namespace Project01_Introduction
             Debug.WriteLine("Tax liability is " + taxLiability);
 
             // example 4 - numeric input
-            string incomeInput = Console.ReadLine();
+           // string incomeInput = Console.ReadLine();
 
-            Debug.WriteLine("Thanks, you entered " + incomeInput);
+          //  Debug.WriteLine("Thanks, you entered " + incomeInput);
 
-            income = Convert.ToDecimal(incomeInput);
+            income = Convert.ToDecimal(1);
             if (income > 400000)
             {
                 taxRate = 0.5M;
@@ -106,6 +119,7 @@ namespace Project01_Introduction
             // Input a number (n) from the user and check if it is even or odd.
 
             // Write your code here
+            Console.WriteLine("Exercise 2 :  Input a number (n) from the user and check if it is even or odd.");
             Console.Write("Enter a number to check odd or even");
             int n = Convert.ToInt32(Console.ReadLine());
 
@@ -124,6 +138,7 @@ namespace Project01_Introduction
             // Input 3 numbers from the user (x,y,z) and find the greatest of them.
 
             // Write your code here
+            Console.WriteLine("Exercise 3: Input 3 numbers from the user (x,y,z) and find the greatest of them.");
             Console.WriteLine("Enter three numbers:");
             int x = Convert.ToInt32(Console.ReadLine());
             int y = Convert.ToInt32(Console.ReadLine());
@@ -171,7 +186,14 @@ namespace Project01_Introduction
             // Eg. n=5. sum = 1+2+3+4+5 = 15
 
             // Write your code here
+            int naturalNumber;
+            Console.Write("Exercise 4 : Input a value (n) from the user and calculate the sum of first n natural numbers.");
+            Console.Write("Enter a value (n): ");
+            naturalNumber = Convert.ToInt32(Console.ReadLine());
 
+            int sum = naturalNumber * (naturalNumber + 1) / 2;
+
+            Console.WriteLine("The sum of the first {0} natural numbers is: {1}", naturalNumber, sum);
 
 
 
@@ -261,6 +283,12 @@ namespace Project01_Introduction
             }
 
             return taxLiability;
+        }
+        static double AreaOfTriangle(double a, double b, double c) {
+
+            double s = (a + b + c) / 2;
+            double area = Math.Sqrt(s * (s - a) * (s - b) * (s - c));
+            return area;
         }
     }
 }
